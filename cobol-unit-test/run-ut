@@ -1,0 +1,118 @@
+#!/bin/bash
+#================================================================================
+# Run unit tests
+#
+# $1 Test configuration file name
+# $2 Program to be tested (without suffix)
+# $3 Unit test cases copy file
+# $4 Test driver program name
+#
+#================================================================================
+
+function run_unit_tests {
+
+  #. envvars
+  export VAGRANTCOBOLSRC="/vagrant/cobol"
+  export MAINSRC="$VAGRANTCOBOLSRC/"
+  export COBUNITBIN="/vagrant/cobol-unit-test/upload"
+  export SRCPRG="$MAINSRC$SUBPROJECT/src/$PROGRAM.CBL"
+  export COBCPY="$COBUNITBIN:$MAINSRC$SUBPROJECT/src/copy:$MAINSRC$SUBPROJECT/test/resources"
+  export TESTPRG="$MAINSRC$SUBPROJECT/test/TESTPRG.CBL"
+  export TESTSRC="$MAINSRC$SUBPROJECT/test"
+  export TESTNAME=TESTPRG
+  export TARGET="$MAINSRC$SUBPROJECT/target"
+  export UTSTCFG="$MAINSRC$SUBPROJECT/test/resources/$CONFIG"
+  export UTESTS="$MAINSRC$SUBPROJECT/test/$UNITTESTS.CBL"
+  export COB_LIBRARY_PATH=$TARGET
+  export PROJECT="/vagrant/cobol-unit-test"
+  export PATH="$PROJECT:$TARGET:$PATH"
+
+  if [ $DEBUG == true ]; then
+    echo "MAINSRC=$MAINSRC"
+    echo "COB_LIBRARY_PATH=$COB_LIBRARY_PATH"
+    echo "SRCPRG=$SRCPRG"
+    echo "TESTPRG=$TESTPRG"
+    echo "UTSTCFG=$UTSTCFG"
+    echo "UTESTS=$UTESTS"
+    echo "COBCPY=$COBCPY"
+    echo "COB_LIBRARY_PATH=$COB_LIBRARY_PATH"
+    echo "PROGRAM=$PROGRAM"
+    echo "TARGET=$TARGET"
+  fi
+  rm "$TARGET/TESTPRG" 2> /dev/null
+  "$COBUNITBIN/ZUTZCPC"
+
+  if [ $? -eq 0 ]; then
+    if [ $SUBPROGRAM == true ]; then
+      compile -ts $TESTSRC/TESTPRG
+      mv "$TARGET/TESTPRG.so" "$TARGET/$PROGRAM.so"
+      echo $TESTSRC/$DRIVER
+      "$TESTSRC/$DRIVER"
+    else
+      compile -t $TESTSRC/TESTPRG
+      "$TARGET/$TESTNAME"
+    fi
+  else
+    echo "Fehler beim Ausführen von ZUTZCPC"
+  fi
+}
+
+function show_help {
+	echo 'Run unit test cases for a Cobol program'
+	echo 'Usage: run ut [options]'
+  echo '           config-file-name'
+  echo '           program-name-without-suffix'
+  echo '           unit-test-copy-file-name'
+  echo '           [test-driver-program-name]'
+  echo '    -d | --debug      Echo debugging information'
+  echo '    -p | --project    Specify a development project. Is used as subdirectory.'
+	echo '    -h | --help       Display usage help (this text) and exit'
+  echo '    -s | --subprogram Compile the program under test as a subprogram'
+  echo '                      (requires test-driver-program-name)'
+  echo '    -v | --version Display the version of the unit test framework'
+}
+
+function show_version {
+	echo "Cobol batch unit test framework $VERSION"
+}
+
+DEBUG=false
+SUBPROGRAM=false
+SUBPROJECT=
+
+TEMP=`getopt -o dhsvp: --long debug,help,subprogram,version,project \
+             -n 'javawrap' -- "$@"`
+
+if [ $? != 0 ] ; then show_help >&2 ;  fi
+
+eval set -- "$TEMP"
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -d | --debug ) DEBUG=true; shift ;;
+    -h | --help ) show_help;;
+    -p | --project ) SUBPROJECT="$2"; shift 2;;
+    -s | --subprogram ) SUBPROGRAM=true; shift ;;
+    -v | --version ) show_version;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+
+if [ $# -eq 0 ]
+  then
+    show_help
+    #exit 0
+fi
+
+CONFIG="$1"
+PROGRAM="$2"
+UNITTESTS="$3"
+DRIVER="$4"
+
+
+echo '=================================================='
+echo "Running: $0 $@"
+run_unit_tests
+#exit 0
+#cobc -x $SRCPRG -std=ibm -o $TARGET/bin/$PROGRAM
