@@ -19,9 +19,9 @@ or [download](https://github.com/FrankR85/GnuCobol-Dev-Environment/archive/maste
 # Examples
 I am a big fan of the [Cobol-Unit-Test project](https://github.com/neopragma/cobol-unit-test) so I modified it a bit and included it in this distribution.
 
-Navigate to http://localhost:8080/fizzbuzz from your windows machine. You will notice that the `FizzBuzz` implementation is not yet correct. Try to complete it:
+Navigate to http://localhost:8080/fizzbuzz from your windows machine. You will notice that the `FizzBuzz` implementation is not yet correct.
 * from your `ssh` session type `cd fizzbuzz` and then `. run-ut.sh`
-* You will notice that some testcases still fail. You can edit the file `cobol/fizzbuzz/src/FIZZBUZZ.cbl` with your favorite Windows editor, save it, and then run `. run-ut.sh` again. Check the results at the browser.
+* You will notice that some testcases still fail. Try to implement the [FizzBuzz logic](https://en.wikipedia.org/wiki/Fizz_buzz) :neckbeard:! You can edit the file `cobol/fizzbuzz/src/FIZZBUZZ.cbl` with your favorite Windows editor, save it, and then run `. run-ut.sh` again. Check the results at the browser.
 
 Another example for the Cobol-Unit-Test project is in located in `cobol/anagram`. Navigate to this directory in your `ssh`-session type `. run-ut.sh` again.
 
