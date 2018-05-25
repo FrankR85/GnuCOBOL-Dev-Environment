@@ -1,5 +1,5 @@
 # GnuCobol-Dev-Environment
-A preconfigured Linux environment for GnuCobol.
+A preconfigured virtual Linux environment for Windows to get started with [GnuCobol](https://sourceforge.net/projects/open-cobol/).
 
 # Prerequisites
 1. Vagrant from HashiCorp [[download here]](https://www.vagrantup.com/downloads.html)
@@ -17,7 +17,7 @@ or [download](https://github.com/FrankR85/GnuCobol-Dev-Environment/archive/maste
 *  There you go. Make sure everything is setup correctly e.g. by running `cobc --version`.
 
 # Examples
-I am a big fan of the [Cobol-Unit-Test project](https://github.com/neopragma/cobol-unit-test) so I modified it a bit and included it GnuCobol Dev Environment.
+I am a big fan of the [Cobol-Unit-Test project](https://github.com/neopragma/cobol-unit-test) so I modified it a bit and included it in this distribution.
 
 Navigate to http://localhost:8080/fizzbuzz from your windows machine. You will notice that the `FizzBuzz` implementation is not yet correct. Try to complete it:
 * from your `ssh` session type `cd fizzbuzz` and then `. run-ut.sh`
