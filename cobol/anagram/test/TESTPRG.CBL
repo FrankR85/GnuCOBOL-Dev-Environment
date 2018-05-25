@@ -135,24 +135,6 @@
                        TO UT-EXPECTED
            SET UT-COMPARE-DEFAULT TO TRUE
            PERFORM UT-ASSERT-EQUAL
-
-
-           PERFORM UT-AFTER
-           MOVE 'MOCK'
-               TO UT-TEST-CASE-NAME
-           PERFORM UT-BEFORE
-           MOVE 'V05-AIB-TEST' TO UT-MOCK-FIND-PARA-NAME
-           SET UT-FIND-PARA-MOCK TO TRUE
-           PERFORM UT-SET-MOCK
-           MOVE  ZERO  TO UT-MOCK-ACCESS-COUNT(UT-MOCK-IX)
-           PERFORM F05-TEST
-           ADD 1 TO UT-TEST-CASE-COUNT
-           SET UT-NORMAL-COMPARE TO TRUE
-           MOVE CURRENT-RESULT TO UT-ACTUAL
-           MOVE 'Y'
-                       TO UT-EXPECTED
-           SET UT-COMPARE-DEFAULT TO TRUE
-           PERFORM UT-ASSERT-EQUAL
            PERFORM UT-AFTER
             COPY ZUTZCPD     .
            .
@@ -168,9 +150,6 @@
            .
        UT-END.
 
-           DISPLAY "Hello"
-
-           call 'send'
            DISPLAY CURRENT-RESULT
            GOBACK
            .
@@ -218,23 +197,6 @@
        1001Z.
            EXIT
 
-           .
-       F05-TEST SECTION.
-           PERFORM V05-AIB-TEST
-           IF STRING-AUS-DB = "AB"
-             MOVE "X" TO CURRENT-RESULT
-           ELSE
-             MOVE "Y" TO CURRENT-RESULT
-           END-IF
-
-           EXIT
 
            .
-       V05-AIB-TEST.
-      *    DISPLAY 'VIEL SCHEISS WIRD HIER GELESEN'
-      *    MOVE "AB"
-      *      TO STRING-AUS-DB
-      *    EXIT
-           ADD 1 TO UT-MOCK-ACCESS-COUNT(UT-MOCK-IX)
-      *    EXIT
-           .
+       END PROGRAM ANAGRAMM.

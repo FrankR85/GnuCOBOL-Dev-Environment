@@ -39,11 +39,3 @@
            MOVE "AB CD" TO CURRENT-WORD
            PERFORM 1001-FIND-STRING-ENDE
            EXPECT POSITION-STRING-END TO BE '05'
-
-
-           TESTCASE 'MOCK'
-           MOCK
-           PARAGRAPH V05-AIB-TEST
-           END-MOCK
-           PERFORM F05-TEST
-           EXPECT CURRENT-RESULT TO BE 'Y'

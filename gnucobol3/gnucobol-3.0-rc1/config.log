@@ -616,7 +616,7 @@ configure:12081: checking how to hardcode library paths into programs
 configure:12106: result: immediate
 configure:12208: checking for shl_load
 configure:12208: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
-/tmp/ccMsev6W.o: In function `main':
+/tmp/ccz68OEN.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.c:64: undefined reference to `shl_load'
 collect2: error: ld returned 1 exit status
 configure:12208: $? = 1
@@ -742,7 +742,7 @@ configure: failed program was:
 configure:12246: result: no
 configure:12251: checking for dlopen
 configure:12251: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
-/tmp/ccuQ6xfa.o: In function `main':
+/tmp/cc0vd7oY.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.c:64: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 configure:12251: $? = 1
@@ -825,7 +825,7 @@ configure:12491: $? = 0
 configure:12509: result: yes
 configure:12514: checking whether a statically linked program can dlopen itself
 configure:12594: gcc -std=gnu99 -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic -static conftest.c -ldl  >&5
-/tmp/ccOd1wjd.o: In function `main':
+/tmp/cciukX7s.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/configure:12573: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
 /usr/bin/ld: dynamic STT_GNU_IFUNC symbol `strcmp' with pointer equality in `/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/libc.a(strcmp.o)' can not be used when making an executable; recompile with -fPIE and relink with -pie
 collect2: error: ld returned 1 exit status
@@ -850,11 +850,11 @@ configure:12913: checking lex output file root
 configure:12927: result: lex.yy
 configure:12932: checking lex library
 configure:12946: gcc -std=gnu99 -o conftest -g -O2   conftest.c   >&5
-/tmp/ccp9Az7o.o: In function `input':
+/tmp/cculcKPM.o: In function `input':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/lex.yy.c:1183: undefined reference to `yywrap'
-/tmp/ccp9Az7o.o: In function `yylex':
+/tmp/cculcKPM.o: In function `yylex':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/lex.yy.c:882: undefined reference to `yywrap'
-/tmp/ccp9Az7o.o: In function `main':
+/tmp/cculcKPM.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.l:18: undefined reference to `yywrap'
 collect2: error: ld returned 1 exit status
 configure:12946: $? = 1
@@ -3086,7 +3086,7 @@ configure:13785: $? = 0
 configure:13785: result: yes
 configure:13791: checking for _doprnt
 configure:13791: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
-/tmp/cctOXLcJ.o: In function `main':
+/tmp/cctwwMEX.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.c:80: undefined reference to `_doprnt'
 collect2: error: ld returned 1 exit status
 configure:13791: $? = 1
@@ -3254,7 +3254,7 @@ configure:13808: $? = 0
 configure:13808: result: yes
 configure:13808: checking for getexecname
 configure:13808: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
-/tmp/cc8O5hJ6.o: In function `main':
+/tmp/ccAjW0sr.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.c:94: undefined reference to `getexecname'
 collect2: error: ld returned 1 exit status
 configure:13808: $? = 1
@@ -4314,7 +4314,7 @@ configure: failed program was:
 configure:17826: result: no
 configure:17833: checking for dlopen in -lc
 configure:17858: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lc   >&5
-/tmp/cc8qvhAA.o: In function `main':
+/tmp/ccSnjCDF.o: In function `main':
 /vagrant/gnucobol3/gnucobol-3.0-rc1/conftest.c:94: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 configure:17858: $? = 1

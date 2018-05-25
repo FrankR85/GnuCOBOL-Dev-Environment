@@ -16,9 +16,6 @@
            05 STRING-AUS-DB PIC XX.
 
        PROCEDURE DIVISION.
-           DISPLAY "Hello"
-
-           call 'send'
            DISPLAY CURRENT-RESULT
            GOBACK
           .
@@ -61,20 +58,5 @@
        1001Z.
            EXIT.
 
-       F05-TEST SECTION.
-           PERFORM V05-AIB-TEST
-           IF STRING-AUS-DB = "AB"
-             MOVE "X" TO CURRENT-RESULT
-           ELSE
-             MOVE "Y" TO CURRENT-RESULT
-           END-IF
-
-           EXIT.
-
-       V05-AIB-TEST.
-           DISPLAY 'VIEL SCHEISS WIRD HIER GELESEN'
-           MOVE "AB"
-             TO STRING-AUS-DB
-           EXIT.
 
        END PROGRAM ANAGRAMM.

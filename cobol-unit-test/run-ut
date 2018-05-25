@@ -12,9 +12,9 @@
 function run_unit_tests {
 
   #. envvars
-  export VAGRANTCOBOLSRC="/vagrant/cobol"
-  export MAINSRC="$VAGRANTCOBOLSRC/"
-  export COBUNITBIN="/vagrant/cobol-unit-test/upload"
+  export VAGRANTCOBOLSRC="/vagrant/"
+  export MAINSRC="$VAGRANTCOBOLSRC/cobol/"
+  export COBUNITBIN="$VAGRANTCOBOLSRC/cobol-unit-test/upload"
   export SRCPRG="$MAINSRC$SUBPROJECT/src/$PROGRAM.CBL"
   export COBCPY="$COBUNITBIN:$MAINSRC$SUBPROJECT/src/copy:$MAINSRC$SUBPROJECT/test/resources"
   export TESTPRG="$MAINSRC$SUBPROJECT/test/TESTPRG.CBL"
@@ -24,7 +24,7 @@ function run_unit_tests {
   export UTSTCFG="$MAINSRC$SUBPROJECT/test/resources/$CONFIG"
   export UTESTS="$MAINSRC$SUBPROJECT/test/$UNITTESTS.CBL"
   export COB_LIBRARY_PATH=$TARGET
-  export PROJECT="/vagrant/cobol-unit-test"
+  export PROJECT="$VAGRANTCOBOLSRC/cobol-unit-test"
   export PATH="$PROJECT:$TARGET:$PATH"
 
   if [ $DEBUG == true ]; then
