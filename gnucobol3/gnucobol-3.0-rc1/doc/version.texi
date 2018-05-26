@@ -1,4 +1,0 @@
-@set UPDATED 25 May 2018
-@set UPDATED-MONTH May 2018
-@set EDITION 3.0-rc1
-@set VERSION 3.0-rc1

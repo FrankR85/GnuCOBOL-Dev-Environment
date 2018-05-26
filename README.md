@@ -1,5 +1,5 @@
-# GnuCobol-Dev-Environment
-A preconfigured virtual Linux environment for Windows to get started with [GnuCobol](https://sourceforge.net/projects/open-cobol/).
+# GnuCOBOL-Dev-Environment
+A preconfigured virtual Linux environment for Windows to get started with [GnuCOBOL](https://www.gnu.org/software/gnucobol/).
 
 # Prerequisites
 1. Vagrant from HashiCorp [[download here]](https://www.vagrantup.com/downloads.html)
