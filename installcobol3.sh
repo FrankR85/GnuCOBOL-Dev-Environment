@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install -y --force-yes libgmp3-dev libdb-dev
+sudo apt-get install -y --force-yes build-essential libgmp3-dev libdb-dev
 
 echo "download GnuCOBOL"
 mkdir /home/vagrant/gnucobol3

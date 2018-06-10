@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
   config.vm.box_download_insecure = true
   config.vm.provision :shell, path: "installcobol3.sh"
   config.vm.provision :shell, path: "bootstrap.sh"
