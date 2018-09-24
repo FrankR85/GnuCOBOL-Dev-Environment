@@ -11,7 +11,7 @@ A preconfigured virtual Linux environment for Windows to get started with [GnuCO
  ```git
 git clone https://github.com/FrankR85/GnuCobol-Dev-Environment
 ```
-or [download](https://github.com/FrankR85/GnuCobol-Dev-Environment/archive/master.zip.) it.
+or [download](https://github.com/FrankR85/GnuCOBOL-Dev-Environment/archive/master.zip.) it.
 * open git bash (or the default windows cmd shell) and navigate to the cloned repository. Type `vagrant up`. This starts the virtual machine. The first run could take some fairly large amount of time because vagrant has to download quite a lot dependencies.
 * Type `vagrant ssh` to login to your new virtual machine.
 *  There you go. Make sure everything is setup correctly e.g. by running `cobc --version`.
